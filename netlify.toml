@@ -1,0 +1,11 @@
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Content-Type = "application/javascript; charset=utf-8"
+
+[[headers]]
+  for = "/*.mjs"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Content-Type = "application/javascript; charset=utf-8"
