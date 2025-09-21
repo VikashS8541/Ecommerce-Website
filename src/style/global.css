@@ -1,0 +1,310 @@
+@import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&display=swap');
+
+*,::after,::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+     font-family: "Alexandria", sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+a{
+    text-decoration: none;
+}
+
+h1,h2,h3,h4,h5,h6,p{
+    padding: 0;
+    margin: 0;
+}
+
+ul,li,ol{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+
+.container{
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+@media (min-width:1700px) {
+    .container{
+        max-width: 1440px;
+    }
+}
+
+@media (max-width:1300px) {
+    .container{
+        max-width: 1140px;
+    }
+}
+
+@media (max-width:1200px) {
+    .container{
+        max-width: 100%;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
+
+@media (max-width:991.98px) {
+    .container{
+        max-width: 100%;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .list-2,.list-3{
+        display: none;
+    }
+}
+
+.lazy-load-image-background.blur.lazy-load-image-loaded img {
+  transition: transform 0.7s ease-in-out !important;
+}
+
+.pagination-links li a{
+    height: 100%;
+    width: 100%;
+}
+
+
+.product-cart-box .product-info h3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;     
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+  line-height: 1.3;     
+}
+
+.big-image-box .lazy-load-image-background{
+    height: 100%;
+}
+
+
+/* Some Global Classes for the color */
+
+.heading-color{
+    color: #212121;
+}
+
+.text-color{
+    color: #414143;
+}
+
+.text-color:hover{
+    color: #f47630;
+}
+
+.text-white{
+    color: #fff;
+}
+
+.icon-color{
+    fill: #414143;
+}
+
+.primary{
+    color: #f47630;
+}
+
+.dark-bg{
+    background-color: #fff;
+    height: 40px;
+    width: 40px;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #414143;
+    padding: 5px;
+    color:#414143;
+}
+
+.dark-bg:hover{
+    background-color: #414143;
+    color:#fff;
+    border: 1px solid #e6eaec;
+}
+
+.para{
+    color: #576471;
+}
+
+.border{
+    border:  1px solid #e6eaec;
+}
+
+.border-radius{
+    border-radius: 8px;
+}
+
+.border-orange:focus{
+    border: 1px solid #f47630;
+}
+
+.btn{
+    border: none;
+    outline: none;
+    min-height: 40px;
+    width: max-content;
+    padding: 10px 20px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: inherit;
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    background: linear-gradient(to right, #f47630, #ef4329);
+}
+
+.light-btn{
+    border: none;
+    outline: none;
+    min-height: 40px;
+    width: max-content;
+    padding: 15px 20px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: inherit;
+    color:#414143;
+    font-weight: 500;
+    line-height: 1;
+    text-decoration: none;
+    background: #fff;
+    gap: 10px;
+}
+
+.explore-btn svg{
+    height: 20px;
+    width: 20px;
+}
+
+.btn:hover{
+    background: none;
+    color:#414143;
+    border: 1px solid #e6eaec;
+}
+
+.call-btn:hover .dark-bg{
+    background-color: #414143;
+    color:#fff;
+    border: 1px solid #e6eaec;
+}
+
+.call-btn:hover .btn{
+    background: none;
+    color:#414143;
+    border: 1px solid #e6eaec;
+}
+
+/* Some Global Classes for the color */
+
+
+/* --------- Home Page ------------- */
+
+.home-banner{
+    background: url(../assets/images/Home-banner.jpg) bottom no-repeat;
+    background-size: cover;
+}
+
+
+.home-banner .content-box h1{
+    line-height: 1.3;
+}
+
+.home-banner .content-box p{
+    line-height: 1.5;
+}
+
+/* --------- Home Page ------------- */
+
+/* --------- Logo Container ----------- */
+
+.logo-box .logo-inner svg{
+    height: 23px !important;
+    width: 100% !important;
+    min-width: 100% !important;
+    fill: #fff;
+}
+
+/* --------- Logo Container ----------- */
+
+.features-icons svg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.features-icons:hover svg{
+    fill: white;
+}
+
+/* ------------ Testimonial carousel --------------- */
+
+.testimonial .carousel-box .swiper-button-prev::after,
+.testimonial .carousel-box .swiper-button-next::after{
+    font-size: 30px;
+    color: orangered;
+}
+
+.testimonial .carousel-box .swiper-box{
+    padding: 40px 0;
+}
+
+.testimonial .carousel-box .swiper-pagination{
+    bottom: 0px;
+}
+
+.testimonial .carousel-box .swiper-pagination .swiper-pagination-bullet{
+    background-color: gray;
+    height: 10px;
+    width: 10px;
+}
+.testimonial .carousel-box .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active{
+    background-color: orangered;
+}
+
+
+/* ------------ Testimonial carousel --------------- */
+
+/* ------------- Login page -------------- */
+
+  
+  .checkbox-form input[type="checkbox"]:checked {
+    accent-color: orangered;
+  }
+  
+
+/* ------------- Login page -------------- */
+
+/* -------------- Responsive CSS ----------- */
+
+@media (min-width:1700px) {
+    .home-banner{
+        min-height: 80dvh;
+    }
+}
+
+/* -------------- Responsive CSS ----------- */
