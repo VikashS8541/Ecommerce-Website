@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate,useLocation } from "react-router-dom";
 import { productData, productCategory } from "../api/Api";
 import CompareIcon from "@mui/icons-material/Compare";
 import VisibilityIcon from "@mui/icons-material/Visibility";
@@ -214,6 +214,27 @@ const Products = () => {
     setNotification(msg);
     setTimeout(() => setNotification(""), 1500);
   };
+
+
+
+// In your Products component, replace the current useParams line with:
+  const { category: categoryParam } = useParams();
+const location = useLocation();
+
+// Add this useEffect to handle query parameters
+useEffect(() => {
+  // Check if there's a category query parameter
+  const searchParams = new URLSearchParams(location.search);
+  const categoryQuery = searchParams.get('category');
+  
+  if (categoryQuery) {
+    setSelectedCategories([categoryQuery]);
+    setCurrentPage(0);
+  } else if (categoryParam) {
+    setSelectedCategories([categoryParam]);
+    setCurrentPage(0);
+  }
+}, [categoryParam, location.search]);
 
   return (
     <>

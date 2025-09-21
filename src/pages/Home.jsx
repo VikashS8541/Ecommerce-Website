@@ -11,15 +11,30 @@ import { Link } from "react-router-dom";
 import NorthEastIcon from "@mui/icons-material/NorthEast";
 import ProductCard from "../components/ProductCard";
 import { useState } from "react";
+import { useForm } from "react-hook-form";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 
 const Home = () => {
+
   // Notification state for feedback
   const [notification, setNotification] = useState("");
   const showNotification = (msg) => {
     setNotification(msg);
     setTimeout(() => setNotification(""), 1500);
+  };
+
+  // React Hook Form for voucher
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isSubmitting }
+  } = useForm();
+
+  const onVoucherSubmit = (data) => {
+    showNotification("Thank you for subscribing!");
+    reset();
   };
 
   return (
@@ -70,7 +85,7 @@ const Home = () => {
                   OFF
                 </p>
                 <Link
-                  to="/products"
+                  to="/products?category=fragrances"
                   className="mt-3 px-4 sm:px-5 py-2 sm:py-3 w-max bg-white text-black font-semibold rounded-lg flex items-center gap-2"
                 >
                   View Offer
@@ -93,7 +108,7 @@ const Home = () => {
                     10 <span className="text-sm">%</span> OFF
                   </p>
                   <Link
-                    to="/products"
+                    to="/products?category=beauty"
                     className="mt-1 px-4 text-md md:text-xs lg:text-lg sm:px-5 py-2 sm:py-3 w-max border border-gray-300 rounded-lg bg-white text-black font-medium flex items-center gap-2"
                   >
                     View Offer
@@ -122,7 +137,7 @@ const Home = () => {
                     12 <span className="text-sm">%</span> OFF
                   </p>
                   <Link
-                    to="/products"
+                    to="/products?category=Mobile Accessories"
                     className="mt-1 px-4 text-md md:text-xs lg:text-lg sm:px-5 py-2 sm:py-3 w-max border border-gray-300 rounded-lg bg-white text-black font-medium flex items-center gap-2"
                   >
                     View Offer
@@ -196,17 +211,28 @@ const Home = () => {
                 <span className="font-bold italic text-2xl"> 70% OFF </span>{" "}
                 Your Next Purchase!
               </p>
-              <form className=" gap-6 md:gap-0 flex-wrap md:flex-nowrap flex item-center justify-start border mt-6">
+              <form onSubmit={handleSubmit(onVoucherSubmit)} className="gap-6 md:gap-0 flex-wrap md:flex-nowrap flex item-center justify-start border mt-6">
                 <input
                   type="email"
                   placeholder="Your email address"
                   className="flex-grow rounded-l-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none"
+                  {...register("email", {
+                    required: "Email is required",
+                    pattern: {
+                      value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                      message: "Enter a valid email address"
+                    }
+                  })}
+                  disabled={isSubmitting}
                 />
-                <button className="flex items-center text-center justify-center gap-2 bg-gray-900 text-white px-5 py-3 font-semibold w-full md:w-auto xs:rounded-lg md:rounded-r-lg hover:bg-gray-800 transition">
+                <button type="submit" disabled={isSubmitting} className="flex items-center text-center justify-center gap-2 bg-gray-900 text-white px-5 py-3 font-semibold w-full md:w-auto xs:rounded-lg md:rounded-r-lg hover:bg-gray-800 transition">
                   <SendIcon fontSize="small" />
-                  Subscribe
+                  {isSubmitting ? "Submitting..." : "Subscribe"}
                 </button>
               </form>
+              {errors.email && (
+                <span className="text-red-500 text-sm mt-2 block">{errors.email.message}</span>
+              )}
             </div>
           </div>
         </div>

@@ -1,11 +1,10 @@
-
 import React, { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 import { Facebook, Twitter, Instagram, Pinterest } from "@mui/icons-material";
 import { productCategory } from "../api/Api";
 
 const Footer = () => {
-  // Dynamic categories for Shop section (pick a few main ones)
+  // Dynamic categories for Shop section
   const [categories, setCategories] = useState([]);
   useEffect(() => {
     const fetchCategories = async () => {
@@ -17,13 +16,19 @@ const Footer = () => {
     fetchCategories();
   }, []);
 
-  // Pick only a few main categories for Shop (handle API object structure)
+  // Fix: Use category slug for the URL parameter to match API structure
   const mainCategories = Array.isArray(categories) && categories.length > 0
-    ? categories.slice(0, 7).map(cat =>
-        typeof cat === 'object' && cat !== null
-          ? { label: cat.name, to: `/products?category=${encodeURIComponent(cat.slug)}` }
-          : { label: String(cat), to: `/products?category=${encodeURIComponent(cat)}` }
-      )
+    ? categories.slice(0, 7).map(cat => {
+        // Extract both name and slug from the category object
+        const categoryName = typeof cat === 'object' && cat !== null ? cat.name : String(cat);
+        const categorySlug = typeof cat === 'object' && cat !== null ? cat.slug : String(cat).toLowerCase().replace(/\s+/g, '-');
+        
+        // Use the category slug for the URL to match API structure
+        return { 
+          label: categoryName, 
+          to: `/products?category=${encodeURIComponent(categorySlug)}` 
+        };
+      })
     : [];
 
   const footerLinks = [
