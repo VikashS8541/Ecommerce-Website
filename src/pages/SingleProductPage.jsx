@@ -263,9 +263,9 @@ const SingleProductPage = () => {
                   Guaranteed Safe Checkout
                 </p>
                 <div className="flex gap-3">
-                  <span class="ct-icon-container">
+                  <span className="ct-icon-container">
                     <svg
-                      class="ct-icon"
+                      className="ct-icon"
                       width="35"
                       height="35"
                       viewBox="0 0 35 35"
@@ -290,9 +290,9 @@ const SingleProductPage = () => {
                       ></path>
                     </svg>
                   </span>
-                  <span class="ct-icon-container">
+                  <span className="ct-icon-container">
                     <svg
-                      class="ct-icon"
+                      className="ct-icon"
                       width="35"
                       height="35"
                       viewBox="0 0 35 35"
@@ -307,9 +307,9 @@ const SingleProductPage = () => {
                       ></path>
                     </svg>
                   </span>
-                  <span class="ct-icon-container">
+                  <span className="ct-icon-container">
                     <svg
-                      class="ct-icon"
+                      className="ct-icon"
                       width="35"
                       height="35"
                       viewBox="0 0 35 35"
@@ -320,15 +320,15 @@ const SingleProductPage = () => {
                       ></path>
                       <path
                         fill="#FFF"
-                        fill-rule="evenodd"
+                        fillRule="evenodd"
                         d="m6.5 13.9-3.2 7.2h3.8l.5-1.2h1.1l.5 1.2h4.2v-.9l.4.9H16l.4-.9v.9h8.7l1.1-1.1 1 1.1h4.5l-3.2-3.6 3.2-3.6h-4.4l-1 1.1-1-1.1h-9.5l-1 1.9-.8-1.9h-3.8v.9l-.5-.9H6.5zm13 1h5l1.5 1.7 1.6-1.7h1.5l-2.3 2.6 2.3 2.6h-1.6L26 18.4l-1.6 1.7h-4.9v-5.2zm1.2 2.1v-.9h3.1l1.4 1.5-1.4 1.4h-3.1v-1h2.7v-1.1h-2.7v.1zM7.2 14.9h1.9l2.1 4.9v-4.9h2l1.6 3.5 1.5-3.5h2v5.2h-1.2V16l-1.8 4.1h-1.1L12.4 16v4.1H9.9l-.5-1.2H6.8l-.5 1.2H5l2.2-5.2zm.1 3 .9-2.1.8 2.1H7.3z"
-                        clip-rule="evenodd"
+                        clipRule="evenodd"
                       ></path>
                     </svg>
                   </span>
-                  <span class="ct-icon-container">
+                  <span className="ct-icon-container">
                     <svg
-                      class="ct-icon"
+                      className="ct-icon"
                       width="35"
                       height="35"
                       viewBox="0 0 35 35"
