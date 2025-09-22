@@ -66,8 +66,8 @@ const Home = () => {
                 loading="lazy"
                 effect="blur"
                 src={Fragnance}
-                alt="Electronic"
-                className="rounded-2xl w-full h-[250px] md:h-[300px] lg:h-full object-cover 
+                alt="Fragnance"
+                className="rounded-2xl w-full h-[250px] md:h-full lg:h-full object-cover 
           transition duration-400 ease transform group-hover:scale-110 z-0"
               />
               <div className="absolute bottom-6 sm:bottom-10 left-6 sm:left-10 text-white z-10">
@@ -122,7 +122,7 @@ const Home = () => {
                   effect="blur"
                   src={Beauty}
                   alt="Beauty"
-                  className="rounded-2xl w-full h-[180px] md:h-full object-cover 
+                  className="rounded-2xl w-full h-full object-cover 
             transition duration-400 ease transform group-hover:scale-110 z-0"
                 />
               </div>
@@ -170,7 +170,7 @@ const Home = () => {
             </h2>
             <Link
               to="/products"
-              className="border py-3 px-4 heading-color transition transition-duration-500 ease hover:bg-orange-500 hover:text-white hover:border-orange rounded-lg"
+              className="border py-3 xs:text-xs flex md:gap-2 px-4 heading-color transition transition-duration-500 ease hover:bg-orange-500 hover:text-white hover:border-orange rounded-lg"
             >
               View All Products{" "}
               <span>
