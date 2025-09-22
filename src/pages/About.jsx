@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import NorthEastIcon from "@mui/icons-material/NorthEast";
-import FeaturesCard from "../components/featuresCard";
+import FeaturesCard from "../components/FeaturesCard";
 import Stats from "../components/Stats";
 import TestimonialSlider from "../components/TestimonialSlider";
 import SecurePayment from "../components/SecurePayment";
